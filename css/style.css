@@ -558,3 +558,24 @@ img {
 .popular-list li:active img{
   opacity: 0.3;
 }
+
+.services-slider{
+  height: 547px;
+  background: red;
+}
+
+.partners-list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.partners-list img{
+  filter: grayscale(100%) opacity(.2);
+  transition: filter .3s;
+}
+.partners-list img:hover{
+  filter: unset;
+}
