@@ -51,6 +51,7 @@
   --bg-header: var(--yellow);
   --bg-header-input: var(--basic-transparent);
   --bg-popular-item: var(--yellow);
+  --bg-popular-item-hover: var(--yellow-dark);
   --bg-search-btn-hover: var(--basic-black);
   --bg-slide-line: var(--basic-white);
   --br-search: var(--basic-black);
@@ -348,7 +349,6 @@ img {
   text-transform: none;
   letter-spacing: normal;
   display: flex;
-  /* display: none; */
   opacity: 0;
   visibility: hidden;
   flex-wrap: wrap;
@@ -363,7 +363,6 @@ img {
 }
 
 .catalog:hover .submenu,.catalog:focus-within .submenu {
-  /* display: flex; */
   opacity: 1;
   visibility:visible;
 }
@@ -550,4 +549,12 @@ img {
   height: 160px;
   background-color: var(--bg-popular-item);
   margin-bottom: 38px;
+  transition: background-color .3s;
+}
+
+.popular-list li:hover .popular-img-wrapper{
+  background-color: var(--bg-popular-item-hover);
+}
+.popular-list li:active img{
+  opacity: 0.3;
 }
