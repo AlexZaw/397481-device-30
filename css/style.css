@@ -49,6 +49,7 @@
   --rgba-black-30: rgba(0, 0, 0, .3);
   --c-services-btn-current: var(--yellow);
   --bg-btn-cross: var(--yellow-dark);
+  --bg-company-info-line: var(--basic-black);
   --bg-header: var(--yellow);
   --bg-header-input: var(--basic-transparent);
   --bg-partners-btn-current:var(--basic-black);
@@ -59,6 +60,7 @@
   --bg-slide-line: var(--basic-white);
   --br-search: var(--basic-black);
   --br-promo-btn: var(--basic-black);
+  --br-company-info-list: var(--basic-grey-light);
   --c-btn-cross-active: var(--rgba-black-30);
   --c-search-btn-hover: var(--basic-white);
   --c-search-btn-active: var(--rgba-white-30);
@@ -581,7 +583,7 @@ cursor: pointer;
 
 .services{
   min-height: 388px;
-  margin-top: 86px;
+  margin-top: 85px;
   background-image: linear-gradient(to bottom, transparent 100px, var(--bg-services) 100px);
 }
 
@@ -657,6 +659,10 @@ content: url(../img/icons/warranty.svg);
 
 /* Partners */
 
+.partners{
+  margin-top: 90px;
+}
+
 .partners-list{
   list-style: none;
   margin: 0;
@@ -673,4 +679,71 @@ content: url(../img/icons/warranty.svg);
 
 .partners-list img:hover {
   filter: unset;
+}
+
+/* Company info */
+
+.company-info{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap:40px;
+  margin-top: 90px;
+}
+.company-info .about{
+  max-width: 475px;
+}
+.company-info .contacts,
+.company-info .about{
+  position: relative;
+  padding-top: 19px;
+}
+
+.company-info .contacts::before,
+.company-info .about::before{
+  content: '';
+  width: 80px;
+  height: 7px;
+  background-color: var(--bg-company-info-line);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.company-info .title-big{
+  letter-spacing: 0.2em;
+  margin-bottom: 41px;
+}
+
+.company-info p:not(:last-of-type){
+  margin-bottom: 42px;
+}
+.company-info-list{
+  margin: 60px 0 70px;
+  padding: 0;
+  list-style: none;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.75;
+}
+.company-info-list li:not(:last-child){
+margin-bottom: 15px;
+}
+.company-info li::before{
+  content: '';
+  display: inline-block;
+  vertical-align: baseline;
+  box-sizing:border-box;
+  margin-right: 24px;
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--br-company-info-list);
+  border-radius: 50%;
+}
+.company-info .btn-cross{
+  min-width: 260px;
+}
+.company-info .map-link{
+  display: inline-block;
+  margin-top: 27px;
+  margin-bottom: 78px;
 }
