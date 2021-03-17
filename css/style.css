@@ -116,6 +116,8 @@
   --c-sort-link-active: var(--basic-black);
   /* Sorting results */
   --bg-card-over: rgba(238, 238, 238, .7);
+  --br-new-product: var(--rgba-black-30);
+  --c-new-product: var(--rgba-black-30);
   /* Sorting nav */
   --bg-catalog-nav: #EBEBEB;
   --bg-catalog-btn-hover: #D9D9D9;
@@ -182,6 +184,7 @@ iframe {
   text-transform: uppercase;
   box-sizing: border-box;
   padding: 0;
+  cursor: pointer;
 }
 
 .btn-cross {
@@ -251,7 +254,7 @@ iframe {
 .title-big {
   font-family: Gilroy, Verdana, sans-serif;
   font-size: 47px;
-  line-height: 1.22;
+  line-height: 1.23;
   font-weight: 800;
   color: var(--c-text);
 }
@@ -902,6 +905,8 @@ iframe {
 .modal-feedback ::placeholder {
   color: var(--c-form-placeholder);
   opacity: 1;
+  font-family: "Open Sans", Verdana, sans-serif;
+  line-height: 1.35;
 }
 
 .modal-feedback form {
@@ -924,6 +929,7 @@ iframe {
   line-height: 1.225;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .modal-feedback input,
@@ -974,11 +980,7 @@ iframe {
 
 /* Catalog page*/
 
-.page-products h1 {
-  font-family: Gilroy, Verdana, sans-serif;
-  font-size: 47px;
-  font-weight: 800;
-  line-height: 1.225;
+.page-products .title-big {
   margin-top: 44px;
   margin-left: 60px;
 }
@@ -1033,7 +1035,7 @@ iframe {
   font-family: Gilroy, Verdana, sans-serif;
   font-size: 16px;
   font-weight: 800;
-  line-height: 1.225;
+  line-height: 1.25;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -1071,7 +1073,7 @@ iframe {
 .filters-form legend {
   font-family: Gilroy, Verdana, sans-serif;
   font-weight: 800;
-  line-height: 1.22;
+  line-height: 1.21;
   letter-spacing: 0.1em;
   position: absolute;
   top: 14px;
@@ -1131,6 +1133,7 @@ iframe {
   background-color: var(--bg-filter-input);
 }
 
+
 /* Filter product options common control */
 
 .product-options ul {
@@ -1140,7 +1143,7 @@ iframe {
 }
 
 .product-options li {
-  line-height: 1.36;
+  line-height: 1.35;
 }
 
 .product-options li:not(:last-child) {
@@ -1285,7 +1288,7 @@ iframe {
   flex-wrap: wrap;
   font-size: 14px;
   font-weight: 400;
-  line-height: 1.36;
+  line-height: 1.35;
 }
 
 .sort-list a {
@@ -1363,35 +1366,62 @@ iframe {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 40px;
-  row-gap: 38px;
+  row-gap: 48px;
 }
-.product-card{
+
+.product-card {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: start;
 }
 
-.product-box{
+.product-box {
   flex-grow: 1;
   margin-bottom: 30px;
 }
-.product-box img{
+
+.product-box img {
   object-fit: contain;
 }
-.product-card .product-name{
+
+.product-card .product-name {
   font-family: Gilroy, Verdana, sans-serif;
   font-size: 18px;
   font-weight: 800;
-  line-height: 1.225;
+  line-height: 1.222;
   letter-spacing: 0.05em;
 }
-.product-card .product-price{
+
+.product-card .product-price {
   font-family: Gilroy, Verdana, sans-serif;
   font-size: 16px;
-  line-height: 1.37;
+  line-height: 1.375;
   letter-spacing: 0.05em;
 }
+
+.product-new::after {
+  content: 'New';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 62px;
+  height: 62px;
+  box-sizing: border-box;
+  font-family: Gilroy, Verdana, sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: var(--c-new-product);
+  border: 2px solid var(--br-new-product);
+  border-radius: 50%;
+  position: absolute;
+  top: 29px;
+  right: 27px;
+}
+
 
 /* Footer common*/
 
@@ -1402,7 +1432,6 @@ iframe {
   min-height: 324px;
   padding: 43px 0 65px;
   box-sizing: border-box;
-  /* grid-row: -1; */
 }
 
 .main-footer ul {
@@ -1498,7 +1527,7 @@ iframe {
   font-family: Gilroy, Verdana, sans-serif;
   font-size: 18px;
   font-weight: 800;
-  line-height: 1.225;
+  line-height: 1.222;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   display: flex;
