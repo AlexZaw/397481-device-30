@@ -88,7 +88,7 @@
         <li><a href="#">Моноподы для селфи</a></li>
       </ul>
     </div>
-    <div class="products-grid">
+    <div class="catalog-grid">
       <section class="products-filters">
         <h2 class="filters-title">Фильтр:</h2>
         <form action="https://echo.htmlacademy.ru/" class="filters-form">
@@ -160,6 +160,7 @@
               </li>
             </ul>
           </fieldset>
+          <button type="submit" class="btn btn-cross">Показать</button>
         </form>
       </section>
       <section class="sort">
@@ -181,10 +182,44 @@
             </div>
           </div>
         </div>
-
-        <div class="sort-results">
-
-        </div>
+        <div class="products-grid">
+        <section class="products">
+          <h2 class="visually-hidden">Найденные товары</h2>
+          <ul class="products-list">
+            <li class="product-card">
+              <div class="product-box">
+                <img src="img/products/item-1.jpg" width="360" height="380" alt="">
+              </div>
+              <a class="product-name">Любительская селфи-палка</a>
+              <span class="product-price">1 100 руб.</span>
+            </li>
+            <li class="product-card">
+              <div class="product-box">
+                <img src="img/products/item-2.jpg" width="360" height="380" alt="">
+              </div>
+              <a class="product-name">Профессиональная<br aria-hidden="true"> селфи-палка</a>
+              <p class="product-price">1 500 руб.</p>
+            </li>
+            <li class="product-card">
+              <div class="product-box">
+                <img src="img/products/item-3.jpg" width="360" height="380" alt="">
+              </div>
+              <a class="product-name">Непотопляемая<br aria-hidden="true"> селфи-палка</a>
+              <span class="product-price">1 500 руб.</span>
+            </li>
+            <li class="product-card">
+              <div class="product-box">
+                <img src="img/products/item-4.jpg" width="360" height="380" alt="">
+              </div>
+              <a class="product-name">Селфи-палка «Следуй за<br aria-hidden="true"> мной»</a>
+              <span class="product-price">1 900 руб.</span>
+            </li>
+          </ul>
+        </section>
+        <section class="pagination">
+          <h2 class="visually-hidden">Навигация по результатам поиска</h2>
+        </section>
+      </div>
       </section>
     </div>
   </main>

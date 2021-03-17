@@ -1014,7 +1014,7 @@ iframe {
   color: var(--c-bread-active);
 }
 
-.products-grid {
+.catalog-grid {
   display: grid;
   grid-template-columns: 1fr 328px 832px 1fr;
   /* grid-template-rows: max-content 70px 1fr; */
@@ -1041,7 +1041,7 @@ iframe {
 
 .filters-title {
   margin: 0;
-  padding: 25px 191px 25px 0;
+  padding: 25px 191px 27px 0;
   display: flex;
   justify-content: flex-end;
   background-color: var(--bg-filter-head);
@@ -1053,7 +1053,7 @@ iframe {
   padding: 0 68px 0 60px;
   box-sizing: border-box;
   margin-left: auto;
-  margin-top: 72px;
+  margin-top: 70px;
 }
 
 .filters-form fieldset {
@@ -1076,6 +1076,11 @@ iframe {
   letter-spacing: 0.1em;
   position: absolute;
   top: 14px;
+}
+
+.filters-form [type="submit"] {
+  width: 200px;
+  margin-top: 45px;
 }
 
 
@@ -1199,13 +1204,18 @@ iframe {
   opacity: 1;
 }
 
+.product-options input+.switch:active::after {
+  opacity: 1;
+}
+
 .product-options input:checked+.switch:active::after {
   opacity: 0;
 }
 
-.product-options input:not(:checked)+.switch:active::after {
+
+/* .product-options input:not(:checked)+.switch:active::after {
   opacity: 1;
-}
+} */
 
 
 /* Filter checkbox */
@@ -1271,7 +1281,7 @@ iframe {
 
 .sort-title {
   margin: 0 0 0 72px;
-  padding: 25px 0;
+  padding: 25px 0 27px;
 }
 
 .sort-list {
@@ -1338,6 +1348,57 @@ iframe {
   margin-left: 20px;
 }
 
+
+/* Products */
+
+.products-grid {
+  display: grid;
+  grid-template-columns: 760px 1fr;
+  /* background: red; */
+  padding-top: 70px;
+  padding-left: 72px;
+}
+
+.products {
+  grid-column: 1/2;
+}
+
+.products-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 40px;
+  row-gap: 38px;
+}
+.product-card{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: start;
+}
+
+.product-box{
+  flex-grow: 1;
+  margin-bottom: 30px;
+}
+.product-box img{
+  object-fit: contain;
+}
+.product-card .product-name{
+  font-family: Gilroy, Verdana, sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.225;
+  letter-spacing: 0.05em;
+}
+.product-card .product-price{
+  font-family: Gilroy, Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 1.37;
+  letter-spacing: 0.05em;
+}
 
 /* Footer common*/
 
