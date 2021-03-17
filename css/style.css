@@ -104,7 +104,9 @@
   --bg-filter-input: var(--basic-transparent);
   --c-filter-input: var(--basic-black);
   /* Filter controls */
+  --br-switches: var(--basic-black);
   --c-disabled: #A6A6A6;
+  --ol-color: var(--basic-black);
   /* Sorting colors */
   --bg-sort-head: var(--basic-grey-light);
   --c-sort-btn: var(--rgba-black-20);
@@ -1058,12 +1060,13 @@ iframe {
   margin: 0;
   padding: 0;
   border: 0;
+  padding-top: 60px;
   position: relative;
   border-top: 2px solid var(--bg-filters-separator);
 }
 
 .filters-form fieldset:not(:first-child) {
-  margin-top: 33px;
+  margin-top: 34px;
 }
 
 .filters-form legend {
@@ -1075,9 +1078,12 @@ iframe {
   top: 14px;
 }
 
+
+/* Filter price controls */
+
 .price-control {
   width: 200px;
-  margin-top: 70px;
+  margin-top: 10px;
   margin-bottom: 12px;
 }
 
@@ -1113,6 +1119,137 @@ iframe {
 
 .thumb-max {
   left: calc(62% - 10px);
+}
+
+.price-slider input {
+  max-width: 70px;
+  border: 0;
+  background-color: var(--bg-filter-input);
+}
+
+.price-slider ::placeholder {
+  color: var(--c-filter-input);
+  opacity: 1;
+}
+
+
+/* Filter product options common control */
+
+.product-options ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.product-options li {
+  line-height: 1.36;
+}
+
+.product-options li:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.product-options .switch {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.product-options .switch::before,
+.product-options .switch::after {
+  transition: opacity .2s;
+}
+
+.product-options [type="checkbox"]+.switch::before,
+.product-options [type="radio"]+.switch::before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+  border: 2px solid var(--br-switches);
+  border-radius: 2px;
+  margin-right: 16px;
+  text-align: center;
+}
+
+.product-options input:focus+.switch::before {
+  outline-offset: 3px;
+  outline: 2px auto var(--ol-color);
+}
+
+.product-options input:disabled+.switch {
+  color: var(--c-disabled);
+  pointer-events: none;
+}
+
+.product-options input:disabled+.switch::before,
+.product-options input:checked:disabled+.switch::after {
+  opacity: 0.25;
+}
+
+.product-options .switch:hover::before,
+.product-options input:checked+.switch:hover::after {
+  opacity: 0.6;
+}
+
+.product-options .switch:active::before {
+  opacity: 1;
+}
+
+.product-options input:checked+.switch:active::after {
+  opacity: 0;
+}
+
+.product-options input:not(:checked)+.switch:active::after {
+  opacity: 1;
+}
+
+
+/* Filter checkbox */
+
+.product-options [type="checkbox"]+.switch::after {
+  content: url(../img/icons/check.svg);
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+}
+
+.product-options [type="checkbox"]:checked+.switch::after {
+  opacity: 1;
+}
+
+
+/* Filter radio button */
+
+.product-options [type="radio"]+.switch::before {
+  border-radius: 50%;
+}
+
+.product-options [type="radio"]+.switch::after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--br-switches);
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+}
+
+.product-options [type="radio"]:checked+.switch::after {
+  opacity: 1;
+}
+
+.product-options [type="radio"]:checked+.switch:active::before {
+  opacity: 0.6;
 }
 
 

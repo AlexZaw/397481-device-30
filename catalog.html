@@ -88,48 +88,105 @@
         <li><a href="#">Моноподы для селфи</a></li>
       </ul>
     </div>
-<div class="products-grid">
-  <section class="products-filters">
-    <h2 class="filters-title">Фильтр:</h2>
-    <form action="https://echo.htmlacademy.ru/" class="filters-form">
-      <fieldset class="price-slider">
-        <legend>Стоимость</legend>
-        <div class="price-control">
-          <div class="price-track">
-            <div class="price-bar"></div>
-            <button type="button" class="btn thumb thumb-min" aria-label="Регулятор минимальной стоимости"></button>
-            <button type="button" class="btn thumb thumb-max" aria-label="Регулятор максимальной стоимости"></button>
-          </div>
-        </div>
-      </fieldset>
-
-    </form>
-  </section>
-  <section class="sort">
-    <div class="sort-head">
-      <div class="sort-type">
-        <h2 class="sort-title">Сортировка:</h2>
-        <ul class="sort-list">
-          <li><a href="#" class="current">По цене</a></li>
-          <li><a href="#">По типу</a></li>
-          <li><a href="#">По популярности</a></li>
-        </ul>
-        <div class="sort-btns">
-          <button type="button" class="btn sort-btn ascending">
+    <div class="products-grid">
+      <section class="products-filters">
+        <h2 class="filters-title">Фильтр:</h2>
+        <form action="https://echo.htmlacademy.ru/" class="filters-form">
+          <fieldset class="price-slider">
+            <legend>Стоимость</legend>
+            <div class="price-control">
+              <div class="price-track">
+                <div class="price-bar"></div>
+                <button type="button" class="btn thumb thumb-min" aria-label="Регулятор минимальной стоимости"></button>
+                <button type="button" class="btn thumb thumb-max" aria-label="Регулятор максимальной стоимости"></button>
+              </div>
+            </div>
+            <label>от
+              <input type="text" placeholder="0">
+            </label>
+            <label>до
+              <input type="text" placeholder="5000">
+            </label>
+          </fieldset>
+          <fieldset class="product-options">
+            <legend>Цвет</legend>
+            <ul>
+              <li>
+                <label>
+                  <input type="checkbox" class="visually-hidden" checked>
+                  <span class="switch">Чёрный</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                <input type="checkbox" class="visually-hidden">
+                <span class="switch">Белый</span>
+              </label>
+              </li>
+              <li>
+                <label>
+                <input type="checkbox" class="visually-hidden" checked>
+                <span class="switch">Синий</span>
+              </label>
+              </li>
+              <li>
+                <label>
+                <input type="checkbox" class="visually-hidden" checked>
+                <span class="switch">Красный</span>
+              </label>
+              </li>
+              <li>
+                <label>
+                <input type="checkbox" class="visually-hidden">
+                <span class="switch">Розовый</span>
+              </label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="product-options">
+            <legend>Bluetooth</legend>
+            <ul>
+              <li>
+                <label>
+                  <input type="radio" name="bluetooth" value="Есть" checked class="visually-hidden">
+                  <span class="switch">Есть</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="bluetooth" value="Нет" class="visually-hidden">
+                  <span class="switch">Нет</span>
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+        </form>
+      </section>
+      <section class="sort">
+        <div class="sort-head">
+          <div class="sort-type">
+            <h2 class="sort-title">Сортировка:</h2>
+            <ul class="sort-list">
+              <li><a href="#" class="current">По цене</a></li>
+              <li><a href="#">По типу</a></li>
+              <li><a href="#">По популярности</a></li>
+            </ul>
+            <div class="sort-btns">
+              <button type="button" class="btn sort-btn ascending">
           <svg width="11" height="10" fill="#000" xmlns="http://www.w3.org/2000/svg"><path d="M11 0H0l5.5 10L11 0z"/></svg>
           </button>
-          <button type="button" class="btn sort-btn descending current">
+              <button type="button" class="btn sort-btn descending current">
             <svg width="11" height="10" fill="#000" xmlns="http://www.w3.org/2000/svg"><path d="M11 0H0l5.5 10L11 0z"/></svg>
             </button>
+            </div>
+          </div>
         </div>
-      </div>
+
+        <div class="sort-results">
+
+        </div>
+      </section>
     </div>
-
-  <div class="sort-results">
-
-  </div>
-  </section>
-</div>
   </main>
   <footer class="main-footer">
     <div class="container">
