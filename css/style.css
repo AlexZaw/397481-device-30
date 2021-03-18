@@ -43,12 +43,16 @@
   --rgba-black-20: rgba(0, 0, 0, .2);
   --rgba-black-30: rgba(0, 0, 0, .3);
   --rgba-black-40: rgba(0, 0, 0, .4);
+  --rgba-black-50: rgba(0, 0, 0, .5);
   --rgba-black-60: rgba(0, 0, 0, .6);
   /* Common colors */
   --bg-btn: var(--basic-transparent);
   --bg-btn-cross: var(--yellow-dark);
   --c-text: var(--basic-black);
   --c-btn-cross-active: var(--rgba-black-30);
+  --c-btn-small: var(--rgba-black-50);
+  --c-btn-small-hover: var(--basic-black);
+  --c-btn-small-active: var(--rgba-black-20);
   /* Header colors */
   --bg-header: var(--yellow);
   --bg-header-input: var(--basic-transparent);
@@ -221,6 +225,22 @@ iframe {
   height: 100%;
 }
 
+.btn-small{
+  font-family: "Open Sans", Verdana, sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.38;
+  letter-spacing: 0.1em;
+  text-transform: none;
+  color: var(--c-btn-small);
+  transition: color .2s;
+}
+.btn-small:hover{
+  color: var(--c-btn-small-hover);
+}
+.btn-small:active{
+  color: var(--c-btn-small-active);
+}
 .close-modal {
   width: 55px;
   height: 55px;
@@ -1316,8 +1336,8 @@ iframe {
   margin-left: auto;
 }
 
-.sort-btn:not(.current) {
-  cursor: pointer;
+.sort-btn.current {
+  pointer-events: none;
 }
 
 .sort-btn svg {
@@ -1350,7 +1370,6 @@ iframe {
 .products-grid {
   display: grid;
   grid-template-columns: 760px 1fr;
-  /* background: red; */
   padding-top: 70px;
   padding-left: 72px;
 }
@@ -1378,10 +1397,45 @@ iframe {
 }
 
 .product-box {
+  position: relative;
   flex-grow: 1;
   margin-bottom: 30px;
+  order: -1;
+}
+.product-box > img,
+.product-box > .product-btns{
+  transition: opacity .3s;
 }
 
+.product-box:hover > img{
+  opacity: 0.7;
+}
+.product-box:focus-within > img{
+  opacity: 0.7;
+}
+.product-box:hover > .product-btns{
+  opacity: 1;
+}
+.product-btns:focus-within{
+  opacity: 1;
+}
+.product-btns{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 14px;
+  opacity: 0;
+}
+.product-btns .btn-cross{
+  min-width: 200px;
+  margin-bottom: 14px;
+}
 .product-box img {
   object-fit: contain;
 }
