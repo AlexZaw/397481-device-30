@@ -127,6 +127,7 @@
   --bg-catalog-nav: #EBEBEB;
   --bg-page-thumb-hover: #D9D9D9;
   --c-page-thumb-active: var(--rgba-black-30);
+  --c-page-thumb-dis: var(--rgba-black-30);
   --c-page-number: var(--rgba-black-30);
   --c-page-number-hover: var(--rgba-black-60);
   --c-page-number-active: var(--basic-black);
@@ -201,7 +202,7 @@ iframe {
 }
 
 .btn-cross {
-  height: 40px;
+  min-height: 40px;
   font-size: 18px;
   line-height: 1.22;
   letter-spacing: 0.2em;
@@ -654,8 +655,8 @@ iframe {
   box-sizing: border-box;
 }
 
-.promo-btn:not(.promo-btn-current) {
-  cursor: pointer;
+.promo-btn-current {
+  pointer-events: none;
 }
 
 
@@ -676,7 +677,7 @@ iframe {
   letter-spacing: 0.05em;
   display: grid;
   grid-template-columns: repeat(6, 160px);
-  column-gap: 40px;
+  gap: 40px;
 }
 
 .popular-img-wrapper {
@@ -701,15 +702,14 @@ iframe {
 /* Services */
 
 .services {
-  min-height: 388px;
   padding-top: 84px;
   background-image: linear-gradient(to bottom, var(--bg-services-gradient-top) 100px, var(--bg-services-gradient-bottom) 100px);
 }
 
 .services-slider {
-  min-height: 320px;
   display: grid;
   grid-template-columns: 284px 1fr;
+  padding-bottom: 66px;
 }
 
 .services-control {
@@ -791,13 +791,14 @@ iframe {
 
 .partners-list {
   list-style: none;
-  margin: 0;
+  margin: 0 -20px;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
-
+.partners-list li{
+  margin: 0 20px 20px;
+}
 .partners-list img {
   filter: grayscale(100%) opacity(.2);
   transition: filter .3s;
@@ -814,7 +815,7 @@ iframe {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 40px;
-  margin-top: 90px;
+  margin-top: 72px;
   padding-bottom: 77px;
 }
 
@@ -874,7 +875,7 @@ iframe {
 }
 
 .company-info .btn-cross {
-  min-width: 260px;
+  width: 260px;
 }
 
 .company-info .map-link {
@@ -1294,6 +1295,7 @@ iframe {
 .sort-title {
   margin: 0 0 0 72px;
   padding: 25px 0 27px;
+  flex-shrink: 0;
 }
 
 .sort-list {
@@ -1323,13 +1325,13 @@ iframe {
   color: var(--c-sort-link-active);
 }
 
-.sort-list li+li {
-  margin-left: 30px;
+.sort-list li {
+  margin-right: 30px;
 }
-
 .sort-btns {
   margin-right: 4px;
   margin-left: auto;
+  flex-shrink: 0;
 }
 
 .sort-btn.current {
@@ -1406,7 +1408,7 @@ iframe {
   transition: opacity .3s, background-color .3s;
 }
 
-.product-box:hover .product-btns{
+.product-box:hover .product-btns {
   background-color: var(--bg-card-over);
   opacity: 1;
 }
@@ -1512,7 +1514,10 @@ iframe {
   padding: 0 30px;
   height: 100%;
 }
-
+.page-thumb .disabled{
+  color: var(--c-page-thumb-dis);
+  pointer-events: none;
+}
 .page-numbers {
   margin: 0;
   padding: 0;
