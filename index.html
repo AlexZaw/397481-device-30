@@ -16,7 +16,7 @@
   <div class="container">
     <header class="main-header">
       <a class="company-logo"><img src="img/logos/device-logo.svg" width="163" height="35" alt="Логотип Девайс"></a>
-      <form action="https://echo.htmlacademy.ru/" class="header-search">
+      <form action="https://echo.htmlacademy.ru/" method="get" name="search-form" class="header-search">
         <label class="search-block"><input type="search" placeholder="Поиск по сайту"></label>
         <button type="submit" class="btn search-btn">Найти</button>
       </form>
@@ -312,9 +312,11 @@
       </ul>
       <a class="company-logo"><img src="img/logos/device-logo-footer.svg" width="163" height="35" alt="Логотип Девайс"></a>
       <section class="footer-left">
-        <p class="addres">г. Москва, ул. Строителей, 15</p>
+        <h2 class="visually-hidden">Наш адрес</h2>
+        <p>г. Москва, ул. Строителей, 15</p>
       </section>
       <section class="footer-links">
+        <h2 class="visually-hidden">Подробнее о компании. Мы в соцсетях</h2>
         <ul class="site-links">
           <li><a href="#">Доставка</a></li>
           <li><a href="#">Гарантия</a></li>
@@ -332,13 +334,13 @@
           </li>
         </ul>
       </section>
-      <section class="footer-right">
+      <div class="footer-right">
         <a href="tel:+74954959595" class="phone">Тел.: +7 (495) 495-95-95</a>
         <a href="https://htmlacademy.ru/intensive/htmlcss" class="copy" aria-label="Онлайн‑курс
           HTML и CSS, Профессиональная вёрстка сайтов HTML Academy">
           <img src="img/logos/htmlacademy-logo.svg" alt="Логотип HTML Academy">
         </a>
-      </section>
+      </div>
     </div>
   </footer>
 </body>
