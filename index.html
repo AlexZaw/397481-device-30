@@ -17,7 +17,7 @@
     <header class="main-header">
       <a class="company-logo"><img src="img/logos/device-logo.svg" width="163" height="35" alt="Логотип Девайс"></a>
       <form action="https://echo.htmlacademy.ru/" method="get" name="search-form" class="header-search">
-        <label class="search-block"><input type="search" placeholder="Поиск по сайту"></label>
+        <label class="search-block" aria-label="Поиск по сайту"><input type="search" placeholder="Поиск по сайту"></label>
         <button type="submit" class="btn search-btn">Найти</button>
       </form>
       <ul class="user-nav">
@@ -254,7 +254,7 @@
         <div class="contacts">
           <h2 class="title-big">Контакты</h2>
           <p>Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить работоспособность покупки. Всякое бывает.</p>
-          <a href="https://goo.gl/maps/VsEKwwrx4cnybkGN7" class="map-link"><img src="img/map.jpg" width="560" height="222" alt="Карта с указанием местоположения"></a>
+          <a href="https://goo.gl/maps/VsEKwwrx4cnybkGN7" class="map-link"><img src="img/map.jpg" width="560" height="222" alt="Мы находимся по адресу город Москва, ул. Строителей, 15"></a>
           <a href="#" class="btn btn-cross">Напишите нам</a>
         </div>
         <div class="modal modal-map">
@@ -275,8 +275,8 @@
             <label for="client-message">Текст письма:
           <textarea name="message" id="client-message" placeholder="В свободной форме"></textarea>
           </label>
-            <button type="submit" class="btn btn-cross">Отправить</button>
-            <a href="#" class="btn close-modal" aria-label="Закрыть карту"></a>
+            <button type="submit" class="btn btn-cross" aria-label="Отправить форму">Отправить</button>
+            <a href="#" class="btn close-modal" aria-label="Закрыть форму"></a>
           </form>
         </div>
       </section>
