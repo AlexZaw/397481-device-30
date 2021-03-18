@@ -119,6 +119,7 @@
   --c-sort-link-hover: var(--rgba-black-60);
   --c-sort-link-active: var(--basic-black);
   /* Sorting results */
+  --bg-card: #EBEBEB;
   --bg-card-over: rgba(238, 238, 238, .7);
   --br-new-product: var(--rgba-black-30);
   --c-new-product: var(--rgba-black-30);
@@ -440,11 +441,11 @@ iframe {
 }
 
 .compare svg {
-  margin-right: 9px;
+  margin-right: 10px;
 }
 
 .cart svg {
-  margin-right: 8px;
+  margin-right: 13px;
 }
 
 .main-nav {
@@ -1397,26 +1398,21 @@ iframe {
   flex-grow: 1;
   margin-bottom: 31px;
   order: -1;
+  background-color: var(--bg-card);
 }
 
-.product-box>img,
-.product-box>.product-btns {
-  transition: opacity .3s;
+.product-box .product-btns {
+  box-sizing: border-box;
+  transition: opacity .3s, background-color .3s;
 }
 
-.product-box:hover>img {
-  opacity: 0.7;
-}
-
-.product-box:focus-within>img {
-  opacity: 0.7;
-}
-
-.product-box:hover>.product-btns {
+.product-box:hover .product-btns{
+  background-color: var(--bg-card-over);
   opacity: 1;
 }
 
 .product-btns:focus-within {
+  background-color: var(--bg-card-over);
   opacity: 1;
 }
 
