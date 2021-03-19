@@ -624,9 +624,13 @@ iframe {
 
 .promo-control {
   position: absolute;
-  right: 88px;
-  bottom: 160px;
-  font-size: 0;
+  right: 70px;
+  bottom: 150px;
+  line-height: 1;
+  letter-spacing: -1em;
+  max-width: 220px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .promo-btn {
@@ -636,10 +640,13 @@ iframe {
   border-radius: 50%;
   border: 1px solid var(--br-promo-btn);
   vertical-align: middle;
+  margin-right: 18px;
+  margin-bottom: 10px;
+
 }
 
-.promo-btn+.promo-btn {
-  margin-left: 18px;
+.promo-btn {
+  /* margin-right: 18px; */
 }
 
 .promo-btn-current:after {
@@ -896,7 +903,7 @@ iframe {
   align-items: center;
 }
 
-.modal-map {
+.modal-hide {
   display: none;
 }
 
