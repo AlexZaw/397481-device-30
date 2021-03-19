@@ -31,6 +31,7 @@
   --basic-black: #000;
   --basic-white: #fff;
   --basic-grey-light: #E5E5E5;
+  --error-color: #F6DADA;
   --yellow-dark: #F0C52E;
   --yellow: #F7E296;
   --special-yellow: #FFC600;
@@ -72,7 +73,7 @@
   --bg-form-field: #F2F2F2;
   --bg-form-field-hover: #EAEAEA;
   --bg-form-field-focus: var(--basic-transparent);
-  --bg-form-field-invalid: #F6DADA;
+  --bg-form-field-invalid: var(--error-color);
   --bg-modal-close: var(--yellow-dark);
   --br-form-field-fix: var(--basic-transparent);
   --br-form-field-focus: var(--yellow);
@@ -175,7 +176,7 @@ iframe {
   color: var(--c-text);
   overflow-wrap: anywhere;
   display: grid;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: min-content 1fr min-content;
 }
 
 .visually-hidden {
@@ -750,10 +751,12 @@ iframe {
   opacity: 0;
   visibility: hidden;
 }
-.services-control .current-btn:after{
+
+.services-control .current-btn:after {
   opacity: 1;
   visibility: visible;
 }
+
 .services-slide {
   padding-top: 24px;
   margin-left: 116px;
@@ -911,6 +914,9 @@ iframe {
   align-items: center;
 }
 
+.page-feedback .modal{
+  position: static;
+}
 .modal-hide {
   display: none;
 }
@@ -972,6 +978,7 @@ iframe {
   color: var(--c-form-text);
   margin-top: 10px;
   background-color: var(--bg-form-field);
+  outline-offset: 4px;
 }
 
 .modal-feedback input:hover,
@@ -979,7 +986,7 @@ iframe {
   background-color: var(--bg-form-field-hover);
 }
 
-.modal-feedback [for="client-message"] {
+.modal-feedback .client-message-wrapper {
   grid-column: 1/-1;
   margin-bottom: 13px;
 }
@@ -993,6 +1000,14 @@ iframe {
 .modal-feedback textarea:focus {
   border-color: var(--br-form-field-focus);
   background-color: var(--bg-form-field-focus);
+}
+
+.modal-feedback .error-field {
+  background-color: var(--bg-form-field-invalid);
+}
+
+.modal-feedback .error-form {
+  animation: error-form .5s;
 }
 
 .modal-feedback .btn-cross {
@@ -1712,4 +1727,21 @@ iframe {
 
 .main-footer [class*="signed"] {
   margin-right: 44px;
+}
+
+@keyframes error-form {
+  0%,
+  100% {
+    transform: rotateZ(0deg);
+  }
+  15%,
+  45%,
+  75% {
+    transform: rotateZ(-2deg);
+  }
+  30%,
+  60%,
+  90% {
+    transform: rotateZ(2deg);
+  }
 }
