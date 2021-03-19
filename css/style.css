@@ -642,7 +642,6 @@ iframe {
   vertical-align: middle;
   margin-right: 18px;
   margin-bottom: 10px;
-
 }
 
 .promo-btn {
@@ -723,31 +722,42 @@ iframe {
   padding-top: 80px;
   padding-bottom: 55px;
   border-right: 7px solid var(--bg-services-btn-current);
+  overflow: hidden;
 }
 
-.services-btn-wrapper {
-  width: 100%;
-  margin-bottom: 22px;
-  transition: all .5s;
-  /* NOTE: change properties */
-}
-
-.services-btn-current {
+.current-btn {
+  outline: none;
+  color: var(--c-services-btn-current);
   background-color: var(--bg-services-btn-current);
 }
 
-.services-btn-current .btn {
-  color: var(--c-services-btn-current);
-}
-
-.services-btn-current .btn::before {
+.services-control .current-btn::before {
   height: 0;
 }
 
 .services-control .btn {
   min-width: 160px;
+  position: relative;
+  margin-bottom: 22px;
+  transition: color .3s, background-color .5s;
 }
 
+.services-control .btn:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 100%;
+  background-color: var(--bg-services-btn-current);
+  transition: opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+}
+.services-control .current-btn:after{
+  opacity: 1;
+  visibility: visible;
+}
 .services-slide {
   padding-top: 24px;
   margin-left: 116px;
@@ -803,9 +813,11 @@ iframe {
   display: flex;
   flex-wrap: wrap;
 }
-.partners-list li{
+
+.partners-list li {
   margin: 0 20px 20px;
 }
+
 .partners-list img {
   filter: grayscale(100%) opacity(.2);
   transition: filter .3s;
@@ -920,10 +932,6 @@ iframe {
 .modal-map .close-modal {
   top: 29px;
   right: 2px;
-}
-
-.modal-feedback {
-  display: none;
 }
 
 .modal-feedback ::placeholder {
@@ -1335,6 +1343,7 @@ iframe {
 .sort-list li {
   margin-right: 30px;
 }
+
 .sort-btns {
   margin-right: 4px;
   margin-left: auto;
@@ -1521,10 +1530,12 @@ iframe {
   padding: 0 30px;
   height: 100%;
 }
-.page-thumb .disabled{
+
+.page-thumb .disabled {
   color: var(--c-page-thumb-dis);
   pointer-events: none;
 }
+
 .page-numbers {
   margin: 0;
   padding: 0;
