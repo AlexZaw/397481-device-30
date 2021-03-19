@@ -51,15 +51,22 @@ function getSlides(element) {
 function showModal(event,modal){
   event.preventDefault();
   modal.classList.remove('modal-hide');
-  modal.addEventListener('click', closeModal)
+  modal.addEventListener('click', function(){
+    closeModal(modal);
+  });
+  window.addEventListener('keydown', function(){
+    closeModal(modal);
+  });
+
 }
-function closeModal(event){
+
+function closeModal(modal){
   const item = event.target;
-  if(item.classList.contains('modal-close')){
+  console.log(modal)
+  if(item.classList.contains('modal-close') || event.keyCode == 27){
     event.preventDefault();
-    const parentModal = item.closest('.modal');
-    parentModal.classList.add('modal-hide');
-    parentModal.removeEventListener('click', closeModal);
+    modal.classList.add('modal-hide');
+    modal.removeEventListener('click', closeModal);
   }
 }
 
