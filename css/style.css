@@ -539,7 +539,7 @@ iframe {
   align-items: center;
 }
 
-.promo-slide-current {
+.promo-slider .slide-current {
   height: auto;
   visibility: visible;
 }
@@ -644,11 +644,7 @@ iframe {
   margin-bottom: 10px;
 }
 
-.promo-btn {
-  /* margin-right: 18px; */
-}
-
-.promo-btn-current:after {
+.promo-control .current-btn::after {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -661,7 +657,7 @@ iframe {
   box-sizing: border-box;
 }
 
-.promo-btn-current {
+.promo-control .current-btn {
   pointer-events: none;
 }
 
@@ -725,7 +721,7 @@ iframe {
   overflow: hidden;
 }
 
-.current-btn {
+.services-control .current-btn {
   outline: none;
   color: var(--c-services-btn-current);
   background-color: var(--bg-services-btn-current);
@@ -765,7 +761,7 @@ iframe {
   z-index: 1;
 }
 
-.services-slide:not(.services-slide-current) {
+.services-slide:not(.slide-current) {
   display: none;
 }
 
