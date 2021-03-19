@@ -254,7 +254,7 @@ iframe {
   color: var(--c-btn-small-active);
 }
 
-.close-modal {
+.modal-close {
   width: 55px;
   height: 55px;
   background: url(../img/icons/close-x.svg) center no-repeat var(--bg-modal-close);
@@ -265,11 +265,11 @@ iframe {
   transition: opacity .3s;
 }
 
-.close-modal:hover {
+.modal-close:hover {
   opacity: 1;
 }
 
-.close-modal:active {
+.modal-close:active {
   opacity: .3;
 }
 
@@ -925,7 +925,7 @@ iframe {
   box-shadow: 0px 10px 16px var(--sh-modal);
 }
 
-.modal-map .close-modal {
+.modal-map .modal-close {
   top: 29px;
   right: 2px;
 }
@@ -1000,7 +1000,7 @@ iframe {
   min-width: 200px;
 }
 
-.modal-feedback .close-modal {
+.modal-feedback .modal-close {
   top: 20px;
   right: 20px;
 }
