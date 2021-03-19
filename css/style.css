@@ -914,9 +914,10 @@ iframe {
   align-items: center;
 }
 
-.page-feedback .modal{
+.page-feedback .modal {
   position: static;
 }
+
 .modal-hide {
   display: none;
 }
@@ -1249,11 +1250,6 @@ iframe {
 .product-options input:checked+.switch:active::after {
   opacity: 0;
 }
-
-
-/* .product-options input:not(:checked)+.switch:active::after {
-  opacity: 1;
-} */
 
 
 /* Filter checkbox */
