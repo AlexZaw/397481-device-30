@@ -17,7 +17,9 @@
     <header class="main-header">
       <a href="index.html" class="company-logo"><img src="img/logos/device-logo.svg" width="163" height="35" alt="Логотип Девайс"></a>
       <form action="https://echo.htmlacademy.ru/" method="get" name="search-form" class="header-search">
-        <label class="search-block"><input type="search" placeholder="Поиск по сайту"></label>
+        <label class="search-block">
+          <input type="search" placeholder="Поиск по сайту">
+        </label>
         <button type="submit" class="btn search-btn">Найти</button>
       </form>
       <ul class="user-nav">
@@ -42,19 +44,25 @@
       </ul>
       <nav class="main-nav">
         <ul class="site-nav">
-          <li class="catalog"><a>Каталог товаров</a>
+          <li class="catalog"><a href="blank.html">Каталог товаров</a>
             <ul class="submenu">
-              <li>
+              <li class="submenu-first-line">
                 <a href="blank.html">Виртуальная реальность</a>
-                <a href="catalog.html">Моноподы для селфи</a>
-                <a href="blank.html">Экшн-камеры</a>
               </li>
-              <li>
+              <li class="submenu-first-line">
                 <a href="blank.html">Фитнес-браслеты</a>
+              </li>
+              <li class="submenu-first-line">
+                <a href="blank.html">Квадрокоптер</a>
+              </li>
+              <li class="submenu-second-line">
+                <a href="catalog.html">Моноподы для селфи</a>
+              </li>
+              <li class="submenu-second-line">
                 <a href="blank.html">Умные часы</a>
               </li>
-              <li>
-                <a href="blank.html">Квадрокоптер</a>
+              <li class="submenu-third-line">
+                <a href="blank.html">Экшн-камеры</a>
               </li>
             </ul>
           </li>

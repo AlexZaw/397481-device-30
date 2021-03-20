@@ -49,6 +49,7 @@
   /* Common colors */
   --bg-btn: var(--basic-transparent);
   --bg-btn-cross: var(--yellow-dark);
+  --bg-btn-cross-feedback: var(--yellow);
   --c-text: var(--basic-black);
   --c-btn-cross-active: var(--rgba-black-30);
   --c-btn-small: var(--rgba-black-50);
@@ -128,7 +129,6 @@
   --bg-catalog-nav: #EBEBEB;
   --bg-page-thumb-hover: #D9D9D9;
   --c-page-thumb-active: var(--rgba-black-30);
-  --c-page-thumb-dis: var(--rgba-black-30);
   --c-page-number: var(--rgba-black-30);
   --c-page-number-hover: var(--rgba-black-60);
   --c-page-number-active: var(--basic-black);
@@ -194,7 +194,7 @@ iframe {
 .btn {
   border: none;
   background: var(--bg-btn);
-  font-family: Gilroy, Verdana, sans-serif;
+  font-family: "Gilroy", Verdana, sans-serif;
   font-weight: 800;
   text-transform: uppercase;
   box-sizing: border-box;
@@ -286,7 +286,7 @@ iframe {
 }
 
 .title-big {
-  font-family: Gilroy, Verdana, sans-serif;
+  font-family: "Gilroy", Verdana, sans-serif;
   font-size: 47px;
   line-height: 1.23;
   font-weight: 800;
@@ -355,6 +355,10 @@ iframe {
 }
 
 .search-btn {
+  font-family: "Open Sans", Verdana, sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.33;
   position: absolute;
   right: 60px;
   bottom: 0;
@@ -409,6 +413,9 @@ iframe {
 }
 
 .search-block input::placeholder {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.33;
   opacity: 0.3;
   transition: opacity .3s;
 }
@@ -461,13 +468,13 @@ iframe {
   font-weight: 800;
   line-height: 1.22;
   letter-spacing: .2em;
-  font-family: Gilroy, Verdana, sans-serif;
+  font-family: "Gilroy", Verdana, sans-serif;
   text-transform: uppercase;
   display: grid;
   grid-template-columns: 3fr 160px 160px 1fr;
 }
 
-.site-nav :nth-child(4n) {
+.site-nav> :nth-child(4n) {
   justify-self: end;
   margin-right: -0.2em;
 }
@@ -483,36 +490,37 @@ iframe {
   line-height: 1.36;
   text-transform: none;
   letter-spacing: normal;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  gap: 13px 64px;
   opacity: 0;
   visibility: hidden;
-  flex-wrap: wrap;
   background-color: var(--bg-header);
   position: absolute;
   z-index: 2;
   top: 1.5em;
-  padding: 30px 60px 26px;
+  padding: 30px 60px 40px;
   left: -60px;
   right: -60px;
-  transition: opacity .3s, visibility .3s;
+  transition: opacity .2s, visibility .2s;
+}
+
+.submenu-first-line {
+  grid-row: 1;
+}
+
+.submenu-second-line {
+  grid-row: 2;
+}
+
+.submenu-third-line {
+  grid-row: 3;
 }
 
 .catalog:hover .submenu,
 .catalog:focus-within .submenu {
   opacity: 1;
   visibility: visible;
-}
-
-.submenu li:not(:last-child) {
-  margin-right: 61px;
-}
-
-.submenu a {
-  display: block;
-}
-
-.submenu a {
-  margin-bottom: 16px;
 }
 
 .catalog>a::after {
@@ -583,13 +591,13 @@ iframe {
 }
 
 .promo-slide::after {
-  font-family: Gilroy, Verdana, sans-serif;
+  font-family: "Gilroy", Verdana, sans-serif;
   font-size: 179px;
   font-weight: 800;
   line-height: 1.22;
   color: var(--c-slide-number);
   counter-increment: slide-number;
-  content: '0' counter(slide-number);
+  content: '0'counter(slide-number);
   position: absolute;
   top: -18px;
   right: 50px;
@@ -601,7 +609,7 @@ iframe {
 }
 
 .promo-slide table {
-  font-family: Gilroy, Verdana, sans-serif;
+  font-family: "Gilroy", Verdana, sans-serif;
   font-size: 13px;
   font-weight: 300;
   line-height: 1.15;
@@ -673,7 +681,7 @@ iframe {
   list-style: none;
   margin: 0;
   padding: 0;
-  font-family: Gilroy, Verdana, sans-serif;
+  font-family: "Gilroy", Verdana, sans-serif;
   font-size: 18px;
   font-weight: 800;
   line-height: 1.22;
@@ -868,6 +876,7 @@ iframe {
 }
 
 .company-info-list {
+  font-family: "Gilroy", Verdana, sans-serif;
   margin: 60px 0 69px;
   padding: 0;
   list-style: none;
@@ -905,10 +914,9 @@ iframe {
 .modal {
   position: fixed;
   z-index: 1;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -916,6 +924,7 @@ iframe {
 
 .page-feedback .modal {
   position: static;
+  transform: translate(0, 0);
 }
 
 .modal-hide {
@@ -946,8 +955,7 @@ iframe {
 
 .modal-feedback form {
   position: relative;
-  width: 100%;
-  max-width: 760px;
+  width: 760px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 40px;
@@ -958,7 +966,7 @@ iframe {
 }
 
 .modal-feedback label {
-  font-family: Gilroy, Verdana, sans-serif;
+  font-family: "Gilroy", Verdana, sans-serif;
   font-size: 18px;
   font-weight: 800;
   line-height: 1.225;
@@ -969,7 +977,7 @@ iframe {
 
 .modal-feedback input,
 .modal-feedback textarea {
-  font-family: Gilroy, Verdana, sans-serif;
+  font-family: "Gilroy", Verdana, sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.16;
@@ -1013,7 +1021,11 @@ iframe {
 
 .modal-feedback .btn-cross {
   justify-self: start;
-  min-width: 200px;
+  width: 200px;
+}
+
+.modal-feedback .btn-cross::before {
+  background-color: var(--bg-btn-cross-feedback);
 }
 
 .modal-feedback .modal-close {
@@ -1075,7 +1087,7 @@ iframe {
 
 .filters-title,
 .sort-title {
-  font-family: Gilroy, Verdana, sans-serif;
+  font-family: "Gilroy", Verdana, sans-serif;
   font-size: 16px;
   font-weight: 800;
   line-height: 1.25;
@@ -1114,7 +1126,7 @@ iframe {
 }
 
 .filters-form legend {
-  font-family: Gilroy, Verdana, sans-serif;
+  font-family: "Gilroy", Verdana, sans-serif;
   font-weight: 800;
   line-height: 1.21;
   letter-spacing: 0.1em;
@@ -1129,6 +1141,11 @@ iframe {
 
 
 /* Filter price controls */
+
+.price-slider {
+  font-family: "Gilroy", Verdana, sans-serif;
+  line-height: 1.14;
+}
 
 .price-control {
   width: 200px;
@@ -1171,6 +1188,7 @@ iframe {
 }
 
 .price-slider input {
+  font-weight: 300;
   max-width: 70px;
   border: 0;
   background-color: var(--bg-filter-input);
@@ -1465,7 +1483,7 @@ iframe {
 }
 
 .product-card .product-name {
-  font-family: Gilroy, Verdana, sans-serif;
+  font-family: "Gilroy", Verdana, sans-serif;
   font-size: 18px;
   font-weight: 800;
   line-height: 1.222;
@@ -1473,7 +1491,7 @@ iframe {
 }
 
 .product-card .product-price {
-  font-family: Gilroy, Verdana, sans-serif;
+  font-family: "Gilroy", Verdana, sans-serif;
   font-size: 16px;
   line-height: 1.375;
   letter-spacing: 0.05em;
@@ -1487,7 +1505,7 @@ iframe {
   width: 62px;
   height: 62px;
   box-sizing: border-box;
-  font-family: Gilroy, Verdana, sans-serif;
+  font-family: "Gilroy", Verdana, sans-serif;
   font-size: 12px;
   font-weight: 800;
   line-height: 1.25;
@@ -1536,11 +1554,6 @@ iframe {
   align-items: center;
   padding: 0 30px;
   height: 100%;
-}
-
-.page-thumb .disabled {
-  color: var(--c-page-thumb-dis);
-  pointer-events: none;
 }
 
 .page-numbers {
@@ -1679,7 +1692,7 @@ iframe {
 }
 
 .main-footer .site-links {
-  font-family: Gilroy, Verdana, sans-serif;
+  font-family: "Gilroy", Verdana, sans-serif;
   font-size: 18px;
   font-weight: 800;
   line-height: 1.222;

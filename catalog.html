@@ -17,7 +17,9 @@
     <header class="main-header">
       <a href="index.html" class="company-logo"><img src="img/logos/device-logo.svg" width="163" height="35" alt="Логотип Девайс"></a>
       <form action="https://echo.htmlacademy.ru/" method="get" name="search-form" class="header-search">
-        <label class="search-block"><input type="search" placeholder="Поиск по сайту"></label>
+        <label class="search-block">
+          <input type="search" placeholder="Поиск по сайту">
+        </label>
         <button type="submit" class="btn search-btn">Найти</button>
       </form>
       <ul class="user-nav">
@@ -44,17 +46,23 @@
         <ul class="site-nav">
           <li class="catalog"><a href="blank.html">Каталог товаров</a>
             <ul class="submenu">
-              <li>
+              <li class="submenu-first-line">
                 <a href="blank.html">Виртуальная реальность</a>
-                <a href="catalog.html">Моноподы для селфи</a>
-                <a href="blank.html">Экшн-камеры</a>
               </li>
-              <li>
+              <li class="submenu-first-line">
                 <a href="blank.html">Фитнес-браслеты</a>
+              </li>
+              <li class="submenu-first-line">
+                <a href="blank.html">Квадрокоптер</a>
+              </li>
+              <li class="submenu-second-line">
+                <a href="catalog.html">Моноподы для селфи</a>
+              </li>
+              <li class="submenu-second-line">
                 <a href="blank.html">Умные часы</a>
               </li>
-              <li>
-                <a href="blank.html">Квадрокоптер</a>
+              <li class="submenu-third-line">
+                <a href="blank.html">Экшн-камеры</a>
               </li>
             </ul>
           </li>
@@ -88,10 +96,10 @@
               </div>
             </div>
             <label aria-label="Минимальная цена">от
-              <input type="text" name="min-price" value="0">
+              <input type="number" name="min-price" value="0">
             </label>
             <label aria-label="Максимальная цена">до
-              <input type="text" name="max-price" value="5000">
+              <input type="number" name="max-price" value="5000">
             </label>
           </fieldset>
           <fieldset class="product-options">
@@ -160,11 +168,11 @@
             </ul>
             <div class="sort-btns">
               <button type="button" class="btn sort-btn ascending" aria-label="Сортировка по возрастанию">
-          <svg width="11" height="10" fill="#000" xmlns="http://www.w3.org/2000/svg"><path d="M11 0H0l5.5 10L11 0z"/></svg>
-          </button>
+                <svg width="11" height="10" fill="#000" xmlns="http://www.w3.org/2000/svg"><path d="M11 0H0l5.5 10L11 0z"/></svg>
+              </button>
               <button type="button" class="btn sort-btn descending current" aria-label="Сортировка по убыванию">
-            <svg width="11" height="10" fill="#000" xmlns="http://www.w3.org/2000/svg"><path d="M11 0H0l5.5 10L11 0z"/></svg>
-            </button>
+                <svg width="11" height="10" fill="#000" xmlns="http://www.w3.org/2000/svg"><path d="M11 0H0l5.5 10L11 0z"/></svg>
+              </button>
             </div>
           </div>
         </div>
@@ -222,7 +230,7 @@
             <h2 class="visually-hidden">Навигация по результатам поиска</h2>
             <ul class="pagination-list">
               <li class="page-thumb">
-                <a href="blank.html" class="btn page-back disabled" aria-label="Перейти на одну страницу назад">Назад</a>
+                <a href="blank.html" class="btn page-back" aria-label="Перейти на одну страницу назад">Назад</a>
               </li>
               <li>
                 <ul class="page-numbers" aria-label="Перейти на страницу">
