@@ -159,9 +159,7 @@ img {
   vertical-align: middle;
 }
 
-iframe {
-  vertical-align: middle;
-}
+
 
 .page {
   height: 100%;
@@ -393,6 +391,7 @@ iframe {
 
 .search-block {
   display: inline-block;
+  vertical-align: baseline;
   width: 440px;
   padding-bottom: 4px;
   border-bottom: 2px solid var(--br-search-fix);
@@ -907,6 +906,7 @@ iframe {
 
 .company-info .map-link {
   display: inline-block;
+  vertical-align: baseline;
   margin-top: 26px;
   margin-bottom: 75px;
 }
@@ -917,18 +917,27 @@ iframe {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .page-feedback .modal {
   position: static;
   transform: translate(0, 0);
+  display: flex;
+  justify-content: center;
 }
 
 .modal-hide {
-  display: none;
+  visibility: hidden;
+}
+
+.modal-hide .feedback-form{
+  width: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.modal-feedback.modal-hide .modal-close{
+  width: 0;
 }
 
 .map-wrapper {
@@ -939,6 +948,7 @@ iframe {
   max-width: 960px;
   max-height: 573px;
   box-shadow: 0px 10px 16px var(--sh-modal);
+  vertical-align: middle;
 }
 
 .modal-map .modal-close {
@@ -963,6 +973,8 @@ iframe {
   padding: 92px 100px 60px;
   background: var(--bg-modal);
   box-shadow: 0px 10px 16px var(--sh-modal);
+  transition: width .3s, visibility .3s;
+  overflow: hidden;
 }
 
 .modal-feedback label {
@@ -1031,6 +1043,7 @@ iframe {
 .modal-feedback .modal-close {
   top: 20px;
   right: 20px;
+  transition: width .3s;
 }
 
 
@@ -1122,7 +1135,7 @@ iframe {
 }
 
 .filters-form fieldset:not(:first-child) {
-  margin-top: 34px;
+  margin-top: 37px;
 }
 
 .filters-form legend {
@@ -1146,11 +1159,30 @@ iframe {
   font-family: "Gilroy", Verdana, sans-serif;
   line-height: 1.14;
 }
+.price-slider input::-webkit-outer-spin-button,
+.price-slider input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.price-slider input[type="number"] {
+  -moz-appearance: textfield;
+}
+.price-slider input[type="number"]:hover,
+.price-slider input[type="number"]:focus {
+  -moz-appearance: auto;
+}
+.price-slider input:hover::-webkit-outer-spin-button,
+.price-slider input:hover::-webkit-inner-spin-button,
+.price-slider input:focus::-webkit-outer-spin-button,
+.price-slider input:focus::-webkit-inner-spin-button{
+  -webkit-appearance: auto;
+  appearance: auto;
+}
 
 .price-control {
   width: 200px;
   margin-top: 10px;
-  margin-bottom: 12px;
+  margin-bottom: 17px;
 }
 
 .price-track {
@@ -1295,6 +1327,7 @@ iframe {
 .product-options [type="radio"]+.switch::after {
   content: '';
   display: inline-block;
+  vertical-align: baseline;
   width: 8px;
   height: 8px;
   border-radius: 50%;

@@ -14,8 +14,8 @@ let clientName = '';
 let clientEmail = '';
 
 try {
-  clientName = localStorage.getItem("clientName");
-  clientEmail = localStorage.getItem("clientEmail");
+  clientName = localStorage.getItem('clientName');
+  clientEmail = localStorage.getItem('clientEmail');
 } catch (err) {
   isStorageSupport = false;
 }
@@ -52,7 +52,7 @@ function clearBtns(btns) {
 }
 
 function markCurrentBtn(btn) {
-  btn.classList.add("current-btn");
+  btn.classList.add('current-btn');
 }
 
 function getSliderControls(element) {
@@ -62,7 +62,7 @@ function getSliderControls(element) {
 
 function getSlides(element) {
   const slider = element.closest('[class*="slider"]');
-  return slider.querySelectorAll(".slide");
+  return slider.querySelectorAll('.slide');
 }
 
 function showModal(event, modal) {
