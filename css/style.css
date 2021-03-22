@@ -1411,7 +1411,10 @@ img {
 .sort-btn.current {
   pointer-events: none;
 }
-
+.sort-btn{
+  display: inline-block;
+  vertical-align: middle;
+}
 .sort-btn svg {
   fill: var(--c-sort-btn)
 }
